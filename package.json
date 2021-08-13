@@ -13,6 +13,10 @@
     "sawo": "^1.0.1",
     "web-vitals": "^0.2.4"
   },
+  "engines": {
+    "npm": "5.7.1",
+    "node": "9.5.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
