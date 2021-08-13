@@ -5,27 +5,19 @@ import styles from "./styles"
 function App() {
 
   // state values
-  const [userPayload, setUserPayload] = useState({})
+  const [userPayload, setUserPayload] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
-
-    // Sawo Configuration, required to render form in the container
-    // onSuccess callback will get invoke, after successful login
-
-    const sawoConfig = {
-      // should be same as the id of the container
-      containerID: 'ad46fb01-bb16-4e4e-bfb0-23255bc75d25',
-      // can be one of 'email' or 'phone_number_sms'
+    const config = {
+      containerID: 'sawo-container',
       identifierType: "email",
-      // Add the API key
-      apiKey: "15bc7505-666c-46be-8477-edc1ac0be3e8",
-      // Add a callback here to handle the payload sent by sdk
+      apiKey: "bf306610-45f8-473a-860f-829f109ea736", // dev.swaolabs.com
       onSuccess: onSuccessLogin
     };
 
     // creating instance
-    let sawo = new Sawo(sawoConfig)
+    let sawo = new Sawo(config)
 
     // calling method to show form
     sawo.showForm();
@@ -46,7 +38,7 @@ function App() {
       
       <div style={styles.containerStyle}>
         <section>
-          <h1>React | Sawo Form Example</h1>
+          <h1>Sawo Login</h1>
           {/* Showing Successful login message */}
           {isLoggedIn && (
             <React.Fragment>
@@ -58,7 +50,7 @@ function App() {
             </React.Fragment>
           )}
 
-          {/* Showing login form */}
+          {/*Redirect*/}
           {
             !isLoggedIn && (
               <div style={styles.formContainer} id="sawo-container">
