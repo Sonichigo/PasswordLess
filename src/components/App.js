@@ -12,7 +12,7 @@ function App() {
     const config = {
       containerID: 'sawo-container',
       identifierType: "email",
-      apiKey: "bf306610-45f8-473a-860f-829f109ea736", // dev.swaolabs.com
+      apiKey: "bf306610-45f8-473a-860f-829f109ea736",
       onSuccess: onSuccessLogin
     };
 
