@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sawo from "sawo";
+import logo from '../logo.png';
+import logo1 from '../logo1.png';
 import styles from "./styles"
 
 function App() {
@@ -12,13 +14,12 @@ function App() {
     const config = {
       containerID: 'sawo-container',
       identifierType: "email",
-      apiKey: "bf306610-45f8-473a-860f-829f109ea736",
+      apiKey: "bf306610-45f8-473a-860f-829f109ea736",//localhost
       onSuccess: onSuccessLogin
     };
 
     // creating instance
     let sawo = new Sawo(config)
-
     // calling method to show form
     sawo.showForm();
   }, [])
@@ -38,14 +39,13 @@ function App() {
       
       <div style={styles.containerStyle}>
         <section>
-          <h1>Sawo Login</h1>
+          <h1 align="center" styles={{color:"aliceblue"}}>News Board</h1>
           {/* Showing Successful login message */}
           {isLoggedIn && (
             <React.Fragment>
-              <div style={styles.loggedin}>
-                <h2>User Successfull login</h2>
-                <div>UserId: {userPayload.user_id}</div>
-                <div>Verification Token: {userPayload.verification_token}</div>
+              <div style={styles.formContainer}>
+                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo1} className="App-logo" alt="logo" />
               </div>
             </React.Fragment>
           )}
